@@ -1,0 +1,11 @@
+body{
+    font-family: 'Times New Roman', Times, serif;
+}
+input{
+    padding: 5px;
+    width: 50%;
+    margin-bottom: 10 px;
+}
+input, label{
+    display: block;
+}
