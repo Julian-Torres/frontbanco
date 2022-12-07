@@ -1,42 +1,37 @@
-import React from "react";
-
+import React, {useState} from "react";
 import { BrowserRouter as Router, Switch, Route, Link, Redirect } from "react-router-dom"
+import { Login } from "./components/login/Login";
+import { PrivateRoute } from './routers/PrivateRoute'
+import { PublicRoute } from './routers/PublicRoute'
+import { AdminRoutes } from './routers/AdminRoutes'
 
-import { Home } from "./Home"; 
-import { About } from "./About";
-import { Users } from "./Users";
-import { Login } from "./Login";
+const init = () => {
+    return localStorage.getItem('token') ? {logged: true} : {logged: false};
+}
 
 const App = () => {
-    return <Router>
-        <div>
-            <nav>
-                <ul>
-                    <li>
-                        <Link to="/">Home</Link>
-                    </li> 
-                    <li>
-                        <Link to="/login">Login</Link>
-                    </li> 
-                    <li>
-                        <Link to="/about">About</Link>
-                    </li>
-                    <li>
-                        <Link to="/users">Users</Link>
-                    </li>
-                </ul>
-            </nav>
-            <Switch>
-                <Route exact path="/"component={Home} />
-                <Route exact path="/about" component={About} />
-                <Route exact path="/users"component={Users} />
 
-                <Route exact path="/login"component={Login} />
-                <Redirect to="/" />
-            </Switch>
-        </div>
-    </Router>
-}
+    const [user, setUser] = useState(init());
+    let modulo = AdminRoutes;
+
+    return <Router>
+    <div>
+        <Switch>
+            <PublicRoute
+                isAuth={user.logged }
+                exact
+                path="/"
+                component={Login}
+            />
+            <PrivateRoute
+                isAuth={user.logged }
+                component={modulo}
+            />
+            <Redirect to="/" />
+        </Switch>
+    </div>
+  </Router>
+  }
 
 export {
     App
