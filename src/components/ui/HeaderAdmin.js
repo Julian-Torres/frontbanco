@@ -22,6 +22,24 @@ export const HeaderAdmin = () => {
                 <li className="nav-item">
                   <NavLink className="nav-link " activeClassName = "active" exact aria-current="page" to = "/usuarios">Usuarios</NavLink>
                 </li>
+                <li className="nav-item">
+                  <NavLink className="nav-link " activeClassName = "active" exact aria-current="page" to = "/tarjetas">Tarjetas</NavLink>
+                </li>
+                <li className="nav-item">
+                  <NavLink className="nav-link " activeClassName = "active" exact aria-current="page" to = "/cuentas">Cuentas</NavLink>
+                </li>
+                <li className="nav-item">
+                  <NavLink className="nav-link " activeClassName = "active" exact aria-current="page" to = "/productos">Productos</NavLink>
+                </li>
+                <li className="nav-item">
+                  <NavLink className="nav-link " activeClassName = "active" exact aria-current="page" to = "/depositos">Depositos</NavLink>
+                </li>
+                <li className="nav-item">
+                  <NavLink className="nav-link " activeClassName = "active" exact aria-current="page" to = "/transferencias">Transferencias</NavLink>
+                </li>
+                <li className="nav-item">
+                  <NavLink className="nav-link " activeClassName = "active" exact aria-current="page" to = "/abonos">Abonos</NavLink>
+                </li>
                 <li className="nav-item dropdown">
                  <NavLink className="nav-link "  activeClassName = "active"  exact aria-current="page" to = "/acerca">Nosotros</NavLink>
                 </li>
