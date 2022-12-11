@@ -10,6 +10,50 @@ input, label{
     display: block;
 }
 
+h1,p{
+	color: whitesmoke;
+	
+}
+
+.table{
+	box-shadow: 0 4px 4px mediumaquamarine;
+}
+.navbar{
+	box-shadow: 0 4px 4px mediumaquamarine;
+}
+
+.fab{border-radius: 100%;
+	bottom: 25px;
+	font-size: 35px;
+	padding: 25px;
+	position: fixed;
+	right: 25px;
+	box-shadow: 0 4px 4px mediumaquamarine;
+	transition: 0.3s;
+}
+.fab:hover{
+	box-shadow: 0 4px 4px aquamarine;
+}
+.fa-plus {
+	color: whitesmoke;
+  }
+
+.sidebar{
+	position: fixed;
+	top: 0;
+	left: 0;
+	background:#0d6d85 ;
+	width: 100%;
+	padding: 1rem 1.5rem;
+	height: 100%;
+	overflow-y:auto;
+}
+
+.sidebar-header{
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
 
 /***login styles**/
 /* https://codepen.io/Mohuth/pen/QWgrPvp */

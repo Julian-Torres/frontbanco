@@ -15,8 +15,8 @@ const getUsuarios = () => {
         }
     })
 }
-const get1Usuarios = (id) => {
-    return axiosInstance.get(`usuario/${id}`, {
+const get1Usuarios = (usuarioId) => {
+    return axiosInstance.get(`usuario/${usuarioId}`, {
         headers: {
             'content-type': 'application/json',
             'Authorization': getToken()

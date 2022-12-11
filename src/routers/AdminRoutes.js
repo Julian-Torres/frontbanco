@@ -11,6 +11,8 @@ import { DepositoView } from '../components/depositos/DepositoView'
 import { TransferenciaView } from '../components/transferencias/TransferenciaView.js'
 import { AbonoView } from '../components/abonos/AbonoView'
 
+import { UsuarioUpdate } from '../components/usuarios/UsuarioUpdate'
+
 import { AboutView } from '../components/about/AboutView'
 
 export const AdminRoutes = () => {
@@ -29,6 +31,8 @@ export const AdminRoutes = () => {
                     <Route exact path='/transferencias' component={TransferenciaView} />
                     <Route exact path='/abonos' component={AbonoView} />
                     <Route exact path='/acerca' component={AboutView} />
+
+                    <Route exact path='/usuarios/:usuarioId' component={UsuarioUpdate} />
                     <Redirect to="/home" />
                 </Switch>
             </div>

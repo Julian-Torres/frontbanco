@@ -1,9 +1,12 @@
 import React, { useState, useEffect } from 'react'
 import { getUsuarios } from "../../services/usuarioService";
+import { UsuarioList } from "./UsuarioList";
+import { UsuarioNew } from "./UsuarioNew";
 
 export const UsuarioView = () => {
 
   const [usuarios, setUsuarios] = useState([])
+  const[openModal,setOpenModal]=useState(false)
 
   const listarUsuarios = async () => {
     try {
@@ -18,6 +21,10 @@ export const UsuarioView = () => {
   useEffect(() => {
     listarUsuarios()
   }, [])
+
+  const handleOpenModal=()=>{
+    setOpenModal(!openModal)
+  }
 
   return (
     <div className="container-fluid">
@@ -37,22 +44,21 @@ export const UsuarioView = () => {
         </thead>
         <tbody>
           {
-            usuarios.map((usuario) => (
-              <tr key={usuario._id} >
-                <td>{usuario.tipoDocumento}</td>
-                <td>{usuario.documento}</td>
-                <td>{usuario.nombre}</td>
-                <td>{usuario.apellido}</td>
-                <td>{usuario.telefono}</td>
-                <td>{usuario.email}</td>
-                <td>{usuario.rol}</td>
-                <td>{usuario.estado}</td>
-                <td>botones de editar y eliminar</td>
-              </tr>
-            ))
+            usuarios.map((usuario) => {
+              return <UsuarioList key={usuario._id} usuario={usuario}/>    
+            })
           }
         </tbody>
       </table>
+      {
+        openModal ? <UsuarioNew 
+                      handleOpenModal={handleOpenModal}
+                      listarUsuarios={listarUsuarios}/>:
+        <button type="button" className="btn btn-dark fab" onClick={handleOpenModal}>
+          <i className="fa-plus fa-solid "></i>
+        </button>
+      }
     </div >
   )
 }
+ 
