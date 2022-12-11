@@ -18,10 +18,6 @@ export const UsuarioNew = ({handleOpenModal,listarUsuarios}) => {
             nombre, apellido, tipoDocumento, documento, telefono, email, rol, contrasena,confirm, estado
         }
         console.log(usuario)
-            // Swal.fire({
-            //     allowOutsideClick:false,
-            //     text:"Cargando..."
-            // })
             Swal.fire({
                 title: 'Guardado',
                 icon: 'success',
