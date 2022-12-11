@@ -9,7 +9,7 @@ export const UsuarioUpdate = () => {
     const [usuario, setUsuario] = useState({})
     const [valoresForm, setValoresForm] = useState({})
 
-    const { nombre = '', apellido = '', tipoDocumento = '', documento = '', telefono = '', email = '', rol = '', contrasena = "", confirm = "", estado = 'Activo' } = valoresForm
+    const { nombre = '', apellido = '', tipoDocumento = '', documento = '', telefono = '', email = '', rol = '', contrasenaAntigua = "", contrasenaNueva = "", estado = 'Activo' } = valoresForm
 
     const getUsuario = async () => {
         try {
@@ -33,8 +33,8 @@ export const UsuarioUpdate = () => {
                 telefono: usuario.telefono, 
                 email: usuario.email,
                 rol: usuario.rol,
-                contrasena: '',
-                confirm: '',
+                contrasenaAntigua: '',
+                contrasenaNueva: '',
                 estado: usuario.estado
             })
     },[usuario])
@@ -47,7 +47,7 @@ export const UsuarioUpdate = () => {
     const handleOnSubmit = async (e) => {
         e.preventDefault()
           const usuario={
-              nombre, apellido, tipoDocumento, documento, telefono, email, rol, contrasena,confirm, estado
+              nombre, apellido, tipoDocumento, documento, telefono, email, rol, contrasenaAntigua,contrasenaNueva, estado
           }
           console.log(usuario)
               Swal.fire({
@@ -149,8 +149,8 @@ export const UsuarioUpdate = () => {
                     <div className='col'>
                         <div class="mb-3">
                             <label className="form-label text-light">Contrseña</label>
-                            <input type="password" name="contrasena" className="form-control text-light bg-secondary"
-                                value={contrasena} onChange={(e) => handleOnChange(e)} minLength={6} />
+                            <input type="password" name="contrasenaAntigua" className="form-control text-light bg-secondary"
+                                value={contrasenaAntigua} onChange={(e) => handleOnChange(e)} minLength={6} />
                         </div>
                     </div>
                 </div>
@@ -158,8 +158,8 @@ export const UsuarioUpdate = () => {
                     <div className='col'>
                         <div class="mb-3">
                             <label className="form-label text-light">Confirmacion</label>
-                            <input type="password" name="confirm" className="form-control text-light bg-secondary"
-                                value={confirm} onChange={(e) => { handleOnChange(e) }} minLength={6} />
+                            <input type="password" name="contrasenaNueva" className="form-control text-light bg-secondary"
+                                value={contrasenaNueva} onChange={(e) => { handleOnChange(e) }} minLength={6} />
                         </div>
                     </div>
                     <div className='col'>
