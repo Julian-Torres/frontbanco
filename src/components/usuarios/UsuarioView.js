@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { getUsuarios } from "../../services/usuarioService";
 import { UsuarioList } from "./UsuarioList";
 import { UsuarioNew } from "./UsuarioNew";
+import Swal from "sweetalert2";
 
 export const UsuarioView = () => {
 
@@ -10,11 +11,17 @@ export const UsuarioView = () => {
 
   const listarUsuarios = async () => {
     try {
+      Swal.fire({
+        text: 'CARGANDO...',
+        allowOutsideClick:false
+      })
       const { data } = await getUsuarios()
       console.log(data);
       setUsuarios(data)
+      Swal.close()
     } catch (error) {
       console.log(error);
+      Swal.close()
     }
   }
 
