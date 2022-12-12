@@ -57,6 +57,7 @@ export const UsuarioUpdate = () => {
                 })
           try {
               const {data} = await putUsuarios(usuarioId,usuario)
+              window.location.href=('http://localhost:3000/usuarios/')
          } catch (error) {
              console.log(error)
               Swal.close()
