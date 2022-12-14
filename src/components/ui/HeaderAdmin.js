@@ -40,9 +40,6 @@ export const HeaderAdmin = () => {
             <li className="nav-item">
               <NavLink className="nav-link " activeClassName="active" exact aria-current="page" to="/abonos">Abonos</NavLink>
             </li>
-            <li className="nav-item dropdown">
-              <NavLink className="nav-link " activeClassName="active" exact aria-current="page" to="/acerca">Nosotros</NavLink>
-            </li>
           </ul>
 
           <div className="navbar-collapse collapse w-100 order-3 dual-collapse2">

@@ -4,15 +4,36 @@ import { Login } from "./components/login/Login";
 import { PrivateRoute } from './routers/PrivateRoute'
 import { PublicRoute } from './routers/PublicRoute'
 import { AdminRoutes } from './routers/AdminRoutes'
+import { ConsultantRoutes } from './routers/ConsultantRoutes'
+
 
 const init = () => {
     return localStorage.getItem('token') ? { logged: true } : { logged: false };
 }
+
+const rol = () => {
+    return localStorage.getItem('rol');
+}
+
   
 const App = () => {
 
     const [user, setUser] = useState(init());
-    let modulo = AdminRoutes;
+    const [role, setRole] = useState(rol());
+
+    let ruta;
+
+    switch (role) {
+        case 'Admin':
+            ruta = AdminRoutes;
+            break;
+        case 'Asesor':
+            ruta = ConsultantRoutes;
+            break;
+        default:
+            ruta = Login;
+    
+    }
 
     return <Router>
         <div>
@@ -25,7 +46,7 @@ const App = () => {
                 />
                 <PrivateRoute
                     isAuth={user.logged}
-                    component={modulo}
+                    component={ruta}
                 />
                 <Redirect to="/" />
             </Switch>

@@ -52,21 +52,21 @@ export const UsuarioNew = ({handleOpenModal,listarUsuarios}) => {
         <form onSubmit={(e)=>handleOnSubmit(e)}>
             <div className='row'>
                 <div className='col'>
-                    <div class="mb-3">
+                    <div className="mb-3">
                         <label className="form-label text-light">Nombre</label>
                         <input type="text" name="nombre" className="form-control text-light bg-secondary" 
                         value={nombre} onChange={(e)=>handleOnChange(e)} required/>
                     </div>                
                 </div>
                 <div className='col'>
-                    <div class="mb-3">
+                    <div className="mb-3">
                         <label className="form-label text-light">Apellido</label>
                         <input type="text" name="apellido" className="form-control text-light bg-secondary" 
                         value={apellido} onChange={(e)=>handleOnChange(e)} required/>
                     </div>
                 </div>
                 <div className='col'>
-                    <div class="mb-3">
+                    <div className="mb-3">
                         <label className="form-label text-light">Tipo Documento</label>
                         <select className="form-select text-light bg-secondary" name="tipoDocumento" 
                         alue={tipoDocumento} onChange={(e)=>handleOnChange(e)} required>
@@ -80,7 +80,7 @@ export const UsuarioNew = ({handleOpenModal,listarUsuarios}) => {
                 
                 </div>
                 <div className='col'>
-                    <div class="mb-3">
+                    <div className="mb-3">
                         <label className="form-label text-light">Documento</label>
                         <input type="number" name="documento" className="form-control text-light bg-secondary" 
                         value={documento} onChange={(e)=>handleOnChange(e)} required/>
@@ -89,21 +89,21 @@ export const UsuarioNew = ({handleOpenModal,listarUsuarios}) => {
             </div>
             <div className='row'>
                 <div className='col'>
-                    <div class="mb-3">
+                    <div className="mb-3">
                         <label className="form-label text-light">Telefono</label>
                         <input type="number" name="telefono" className="form-control text-light bg-secondary" 
                         value={telefono} onChange={(e)=>handleOnChange(e)} required/>
                     </div>                
                 </div>
                 <div className='col'>
-                    <div class="mb-3">
+                    <div className="mb-3">
                         <label className="form-label text-light">Correo</label>
                         <input type="email" name="email" className="form-control text-light bg-secondary" 
                         value={email} onChange={(e)=>handleOnChange(e)} required/>
                     </div>
                 </div>
                 <div className='col'>
-                    <div class="mb-3">
+                    <div className="mb-3">
                         <label className="form-label text-light">Rol</label>
                         <select className="form-select text-light bg-secondary" name="rol" 
                         value={rol} onChange={(e)=>handleOnChange(e)} required>
@@ -115,7 +115,7 @@ export const UsuarioNew = ({handleOpenModal,listarUsuarios}) => {
                     </div>
                 </div>
                 <div className='col'>
-                    <div class="mb-3">
+                    <div className="mb-3">
                         <label className="form-label text-light">Contrseña</label>
                         <input type="password" name="contrasena" className="form-control text-light bg-secondary" 
                         value={contrasena} onChange={(e)=>handleOnChange(e)}minLength={6} required/> 
@@ -124,7 +124,7 @@ export const UsuarioNew = ({handleOpenModal,listarUsuarios}) => {
             </div>
             <div className='row'>
                 <div className='col'>
-                    <div class="mb-3">
+                    <div className="mb-3">
                         <label className="form-label text-light">Confirmacion</label>
                         <input type="password" name="confirm" className="form-control text-light bg-secondary" 
                         value={confirm} onChange={(e)=>{handleOnChange(e)}} minLength={6} required/>
